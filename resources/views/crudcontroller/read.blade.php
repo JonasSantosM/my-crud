@@ -27,34 +27,66 @@
             }
         </style>
     </head>
-
     <body class="antialiased">
-        @extends('templates.menu')
-        <div class="container">
-            <div class="row">
+            @extends('templates.menu')
+            <div class="col-4 offset-4">
+                <div class="row"> 
+                    <div class="col-12">
+                    <h1 class="col-12" style="text-align:center">Leituda de dados</h1>
+                    </div>
                 <div class="col-12">
-                    <h1>Use o menu inferior para navegar entre as páginas</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    Há basicamente duas telas:
+                    
 
-                    <ul>
-                        <li>Inserir dados
-                            <p>Para inserir uma nova linha no banco de dados.</p>
-                        </li>
-                        <li>Ler dados
-                            <p>Para listar todos os dados. Cada linha é um formulário que pode atualizar diretamente ou excluir.</p>
-                        </li>
-                    </ul>
+                    @foreach($cruds as $crud)
+                        <div class="model">
+                            <form action="{{ route('editar', ['id' => $crud->id]) }}" class="col-12">
+                            @csrf
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label for="id">#{{ $crud->id }}</label>
+                                    </div>
+                                </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <label for="name">Nome</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="input col-12" name="name" id="{{ $crud->id }}" value="{{ $crud->name }}">
+                                </div>
+                            </div>
+
+                        <div class="row">
+                                <div class="col-12">
+                                    <label for="email">E-mail</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="input col-12" name="email" id="{{ $crud->id }}" value="{{ $crud->email }}" >
+                                </div>
+                            </div>
+
+                        <div class="row">
+                                <div class="col-12">
+                                    <label for="cpf">CPF</label>
+                                </div>
+                                <div class="col-12">
+                                    <input type="text" class="input col-12" name="cpf" id="{{ $crud->id }}" value="{{ $crud->cpf }}" readonly>
+                                </div>
+                            </div>
+
+                                <div class="row justify-content-between">
+                                    
+                                    <div class="col-6">
+                                        <input type="submit" class="btn btn-warning col-12" id="{{ $crud->id }}" value="Editar">
+                                    </div>
+                                    <div class="col-6">
+                                        <a type="button" class="btn btn-danger col-12" id="{{ $crud->id }}" href="{{ route('remover', ['id' => $crud->id]) }}">Excluir</a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    @endforeach
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <h2>Eu não coloquei nenhuma validação para economizar tempo. Porém, caso fosse num sistema real haveria muito mais.</h2>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+        </body>
+    </html>

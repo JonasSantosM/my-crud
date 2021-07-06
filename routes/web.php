@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\crudcontroller;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/crud', [crudcontroller::class, 'index'])->name("crud");
+Route::post('/crud/store', [crudcontroller::class, 'store'])->name("inserir");
+Route::get('/crud/retrieve', [crudcontroller::class, 'retrieve'])->name("recuperar");
+Route::get('/crud/delete/{id}',[crudcontroller::class, 'remove'])->name("remover");
+Route::get('/crud/update/{id}',[crudcontroller::class, 'edit'])->name("editar");

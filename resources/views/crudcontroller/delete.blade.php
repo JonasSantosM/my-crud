@@ -27,34 +27,9 @@
             }
         </style>
     </head>
-
     <body class="antialiased">
-        @extends('templates.menu')
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Use o menu inferior para navegar entre as páginas</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    Há basicamente duas telas:
-
-                    <ul>
-                        <li>Inserir dados
-                            <p>Para inserir uma nova linha no banco de dados.</p>
-                        </li>
-                        <li>Ler dados
-                            <p>Para listar todos os dados. Cada linha é um formulário que pode atualizar diretamente ou excluir.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <h2>Eu não coloquei nenhuma validação para economizar tempo. Porém, caso fosse num sistema real haveria muito mais.</h2>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+            <h1>
+                CRUD
+            </h1>
+        </body>
+    </html>

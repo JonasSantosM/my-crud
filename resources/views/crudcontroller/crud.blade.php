@@ -27,34 +27,50 @@
             }
         </style>
     </head>
-
     <body class="antialiased">
-        @extends('templates.menu')
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Use o menu inferior para navegar entre as páginas</h1>
-                </div>
+            <div class="col-12">
+                @extends('templates.menu')
             </div>
-            <div class="row">
-                <div class="col-12">
-                    Há basicamente duas telas:
+        <div class="col-4 offset-4">
 
-                    <ul>
-                        <li>Inserir dados
-                            <p>Para inserir uma nova linha no banco de dados.</p>
-                        </li>
-                        <li>Ler dados
-                            <p>Para listar todos os dados. Cada linha é um formulário que pode atualizar diretamente ou excluir.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
             <div class="row">
                 <div class="col-12">
-                    <h2>Eu não coloquei nenhuma validação para economizar tempo. Porém, caso fosse num sistema real haveria muito mais.</h2>
+                    <h1 class="col-12" style="text-align:center">Inserir novo dado</h1>
                 </div>
-            </div>
+            <div class="col-12">
+            <form class="form" action="{{ route('inserir') }}" method="POST">
+                @csrf 
+                <div class="form-group">
+                    <div class="col-12">
+                        <label for="name">Nome</label>
+                    </div>
+                    <div class="col-12">
+                        <input type="text" min-length="2" name="name" id="name" class="from-control input col-12" placeholder="Insira o nome">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-12">
+                    <label for="name">E-mail</label>
+        </div>
+                    <div class="col-12">
+                    <input type="email" name="email" id="email" class="from-control input col-12" placeholder="Insira o e-mail (email@email.com)">
+                </div>
+        </div>
+                <div class="form-group">
+                    <div class="col-12">
+                    <label for="name">CPF</label>
+        </div>
+                    <div class="col-12">
+                    <input type="" name="cpf" min-length="14" max-length="14" id="cpf" class="from-control input col-12" placeholder="Insira o CPF (XXX.XXX.XXX-XX)">
+                </div>
+                <div class="form-group">
+                    <div class="col-12">
+                        <input type="submit" class="btn btn-primary" value="Enviar">
+                    </div>
+                </div>
+        </div>
+            </form>
+        </div>
         </div>
     </body>
 </html>

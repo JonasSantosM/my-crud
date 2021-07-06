@@ -1,0 +1,25 @@
+form.form
+{
+    border-radius: 3px;
+    border: 1px solid black;
+    padding: 10px;
+    min-width: 300px;
+    background-color: darkslategrey;
+    color: white;
+}
+
+input.input
+{
+    border-radius: 3px;
+    margin: 5px 0;
+}
+
+div.model
+{
+    background-color: darkslategrey;
+    color: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 10px 0;
+}
