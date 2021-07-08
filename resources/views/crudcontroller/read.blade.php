@@ -32,7 +32,7 @@
             <div class="col-4 offset-4">
                 <div class="row"> 
                     <div class="col-12">
-                    <h1 class="col-12" style="text-align:center">Leituda de dados</h1>
+                    <h1 class="col-12" style="text-align:center">Leitura de dados</h1>
                     </div>
                 <div class="col-12">
                     
@@ -77,10 +77,10 @@
                                 <div class="row justify-content-between">
                                     
                                     <div class="col-6">
-                                        <input type="submit" class="btn btn-warning col-12" id="{{ $crud->id }}" value="Editar">
+                                        <input type="submit" class="btn btn-warning col-12" id="{{ $crud->id }}" value="Atualizar" title="Clique para salvar alterações">
                                     </div>
                                     <div class="col-6">
-                                        <a type="button" class="btn btn-danger col-12" id="{{ $crud->id }}" href="{{ route('remover', ['id' => $crud->id]) }}">Excluir</a>
+                                        <a type="button" class="btn btn-danger col-12" id="{{ $crud->id }}" href="{{ route('remover', ['id' => $crud->id]) }}" title="Clique para excluir este cadastro">Excluir</a>
                                     </div>
                                 </div>
                             </form>

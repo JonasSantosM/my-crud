@@ -28,9 +28,7 @@
         </style>
     </head>
     <body class="antialiased">
-            <div class="col-12">
                 @extends('templates.menu')
-            </div>
         <div class="col-4 offset-4">
 
             <div class="row">
@@ -65,7 +63,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-12">
-                        <input type="submit" class="btn btn-primary" value="Enviar">
+                        <input type="submit" class="btn btn-primary" value="Cadastrar" title="Clique para salvar estes dados">
                     </div>
                 </div>
         </div>
